@@ -7,6 +7,7 @@ import requests
 import matplotlib.cm as cm
 from datetime import datetime,timedelta
 import textwrap
+import time
 # import API credentials
 from mastodon_api_cred import *
 
@@ -143,28 +144,32 @@ def reply_to_mentions():
 
 
 def main():
-    # Create a Mastodon object
-    mastodon = Mastodon(client_id=client_id, client_secret=client_secret, access_token=access_token, api_base_url=instance_url)
+    while True:
+        # Create a Mastodon object
+        mastodon = Mastodon(client_id=client_id, client_secret=client_secret, access_token=access_token, api_base_url=instance_url)
 
-    # download data, and make plots
-    todays_anomaly = north_atlantic_plots()
+        # download data, and make plots
+        todays_anomaly = north_atlantic_plots()
 
-    # Prepare post
-    temperature_anomaly = f"{todays_anomaly:.2f}°C"
-    data_source = "https://climatereanalyzer.org/clim/sst_daily/"  
+        # Prepare post
+        temperature_anomaly = f"{todays_anomaly:.2f}°C"
+        data_source = "https://climatereanalyzer.org/clim/sst_daily/"  
 
-    post_str = (
-    f"🌏🔥🌡️: Today's North Atlantic Sea Surface Temperature Anomaly is {temperature_anomaly} above the 1982-2011 mean.\n"
-    f"\nData source: {data_source}\n"
-    "\n#ClimateChange #DataAnalysis #ClimateAwareness #globalwarming #science #climate #collapse" )
+        post_str = (
+        f"🌏🔥🌡️: Today's North Atlantic Sea Surface Temperature Anomaly is {temperature_anomaly} above the 1982-2011 mean.\n"
+        f"\nData source: {data_source}\n"
+        "\n#ClimateChange #DataAnalysis #ClimateAwareness #globalwarming #science #climate #collapse" )
 
 
-    # Upload images and get media IDs
-    media_ids = [mastodon.media_post('NA_SSTA.png'), mastodon.media_post('NA_SSTA_anomaly.png')]
+        # Upload images and get media IDs
+        media_ids = [mastodon.media_post('NA_SSTA.png'), mastodon.media_post('NA_SSTA_anomaly.png')]
 
-    # Post the toot with the caption and media IDs
-    mastodon.status_post(post_str, media_ids=media_ids)
+        # Post the toot with the caption and media IDs
+        mastodon.status_post(post_str, media_ids=media_ids)
 
+        # Set the posting interval (in seconds), for example, once every 24 hours
+        posting_interval = 12 * 60 * 60  # 12 hours * 60 minutes * 60 seconds
+        time.sleep(posting_interval)
 
 if __name__ == "__main__":
     main()
