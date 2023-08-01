@@ -3,8 +3,6 @@
 <a rel="me" href="https://botsin.space/@ClimateChangeBot">@ClimateChangeBot</a> is a Mastodon bot that posts daily North Atlantic Sea Surface Temperature (SST) anomaly data. It provides valuable insights into the changing climate and the impact on sea surface temperatures in the North Atlantic region.
 
 
-
-
 ## Features
 * Daily North Atlantic Sea Surface Temperature (SST) anomaly data.
 * Two plots: Raw temperature data and Anomaly data.
@@ -17,8 +15,7 @@
 
 ## Next Steps
 - add automatic bot reply to mentions
-- instead of running in a 'while' loop, try running as a cron job?
-- make similar posts for antartic sea ice extent, and additional climate data
+- make similar posts for antartic sea ice extent, and additional (photgenic) climate data
 
 # Contact
 If you have any questions or feedback, please contact **Maxwell A. Fine**:
