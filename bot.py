@@ -171,7 +171,7 @@ def antartic_sea_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per_
 
     # Create the caption text
     data_source = '©Maxwell A. Fine, Data Source: The NOAA Sea Ice Index developed by the National Snow and Ice Data Center (NSIDC)'
-    data_origin = 'Through https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/S_seaice_extent_daily_v3.0.csv'
+    data_origin = 'Through https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/S_seaice_extent_daily_v3.0.csv, University of Colorado Boulder'
     data_up_to = f'Data up to {today}'
     caption_text = '\n'.join(textwrap.wrap(data_source + '\n' + data_origin + '\n' + data_up_to, width=120))
 
@@ -205,7 +205,7 @@ def antartic_sea_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per_
 
     # Create the caption text
     data_source = '©Maxwell A. Fine, Data Source: The NOAA Sea Ice Index developed by the National Snow and Ice Data Center (NSIDC)'
-    data_origin = 'Through https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/S_seaice_extent_daily_v3.0.csv'
+    data_origin = 'Through https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/S_seaice_extent_daily_v3.0.csv, University of Colorado Boulder'
     data_up_to = f'Data up to {today}'
     caption_text = '\n'.join(textwrap.wrap(data_source + '\n' + data_origin + '\n' + data_up_to, width=120))
 
