@@ -167,6 +167,8 @@ def main():
     # Post the toot with the caption and media IDs
     mastodon.status_post(post_str, media_ids=media_ids)
 
+    print('Ran')
+
 
 if __name__ == "__main__":
     main()
