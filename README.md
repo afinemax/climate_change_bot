@@ -16,8 +16,7 @@
 
 ## Next Steps
 - add automatic bot reply to mentions
-- instead of running in a 'while' loop, try running as a cron job?
-- make similar posts for antartic sea ice extent, and additional climate data
+- make similar posts for antartic sea ice extent, and additional (photgenic) climate data
 
 # Contact
 If you have any questions or feedback, please contact **Maxwell A. Fine**:
