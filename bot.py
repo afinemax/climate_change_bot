@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # imports
+print('made it here!')
 import numpy as np
 import matplotlib.pyplot as plt
 from mastodon import Mastodon
@@ -95,6 +96,7 @@ def north_atlantic_plots(url='https://climatereanalyzer.org/clim/sst_daily/json/
     plt.figtext(0.1, -0.01, caption_text, fontsize=10, ha='left', va='center', alpha=0.5, bbox=dict(facecolor='None', edgecolor='None'))
     plt.tight_layout()
     plt.savefig('NA_SSTA', dpi=300,bbox_inches='tight')
+    plt.close()
 
 
     # anomaly
@@ -124,6 +126,7 @@ def north_atlantic_plots(url='https://climatereanalyzer.org/clim/sst_daily/json/
     plt.figtext(0.1, -0.01, caption_text, fontsize=10, ha='left', va='center', alpha=0.5, bbox=dict(facecolor='None', edgecolor='None'))
     plt.tight_layout()
     plt.savefig('NA_SSTA_anomaly', dpi=300,bbox_inches='tight')
+    plt.close()
 
     
     return data[-4,index_today-1] - data[-3,index_today-1] # todays anaomly
