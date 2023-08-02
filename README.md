@@ -12,7 +12,7 @@
 ## Credits
 * Data Source: NOAA Optimum Interpolation SST (OISST) dataset version 2.1.
 * Data Provided by: <a href="url='https://climatereanalyzer.org/clim/sst_daily/json/oisst2.1_natlan1_sst_day.json">ClimateReanalyzer</a>, Climate Change Institute, University of Maine.
-* 
+
 
 ## Next Steps
 - add automatic bot reply to mentions
