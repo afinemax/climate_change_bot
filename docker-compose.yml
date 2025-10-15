@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  climate_change_bot:
+    build: .
+    container_name: climate_change_bot
+    volumes:
+      - .:/app
+    env_file:
+      - env.env
+    # The command runs both scripts: first without env, then with env
+    command: >
+      bash -c "python3 climate_daily_report.py && python3 post_to_blue_sky.py"
+    restart: "no"
+
