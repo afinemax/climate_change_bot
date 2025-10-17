@@ -140,14 +140,14 @@ def make_na_sst_plot(url='https://climatereanalyzer.org/clim/sst_daily/json_2cli
     today_val =data[-4:][:, index_today][0]
     anomaly_val = today_val - data_mean[index_today]
     social_caption = (
-        f"🌏🔥🌡️: Today's North Atlantic Sea Surface Temperature Anomaly is {anomaly_val:.2f}°C above the 1982–2010 mean.\n\n"
-        "#ClimateChange #NorthAtlantic #SST #GlobalWarming #greenhouse #science #dataanalysis " 
-    )
+    f"🌏🔥🌡️: Today's North Atlantic Sea Surface Temperature Anomaly is "
+    f"{anomaly_val:.2f}°C above the 1982–2010 mean. "
+    "#ClimateChange #NorthAtlantic #SST #GlobalWarming #greenhouse #science #dataanalysis")
 
     # Markdown caption
     md_path = os.path.join(OUTPUT_DIR, "NA_SST.md")
     with open(md_path, "w") as f:
-        f.write(f"{social_caption}\n\n")
+        f.write(f"{social_caption}\n")
 
     return anomaly_val, social_caption, md_path
 
@@ -199,7 +199,7 @@ def make_antartic_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per
     sm.set_array([])
     fig.colorbar(sm, ax=ax)
 
-    raw_path = os.path.join(OUTPUT_DIR, "antartic_ice.png")
+    raw_path = os.path.join(OUTPUT_DIR, "antarctic_ice.png")
     plt.tight_layout()
     plt.savefig(raw_path, dpi=150, bbox_inches='tight')
     plt.close(fig)
@@ -220,7 +220,7 @@ def make_antartic_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per
     sm.set_array([])
     fig.colorbar(sm, ax=ax)
 
-    anomaly_path = os.path.join(OUTPUT_DIR, "antartic_ice_anomaly.png")
+    anomaly_path = os.path.join(OUTPUT_DIR, "antarctic_ice_anomaly.png")
     plt.tight_layout()
     plt.savefig(anomaly_path, dpi=150, bbox_inches='tight')
     plt.close(fig)
@@ -232,15 +232,15 @@ def make_antartic_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per
     today_std = today_anomaly / std_extent_per_day[index_today]
 
     social_caption = (
-        f"🌏🇦🇶🔥: Today's Antarctic Sea Ice Anomaly is {today_anomaly:.2f} Million Square Kilometers "
-        f"({today_std:.2f}σ) above the 1981–2010 mean.\n\n"
-        "#ClimateCrisis #SeaIce #Antarctica #Greenhouse #science #dataanalysis"
-    )
+    f"🌏🇦🇶🔥: Today's Antarctic Sea Ice Anomaly is {today_anomaly:.2f} Million Square Kilometers "
+    f"({today_std:.2f}σ) above the 1981–2010 mean. "
+    "#ClimateCrisis #SeaIce #Antarctica #Greenhouse #science #dataanalysis")
 
     # Markdown
-    md_path = os.path.join(OUTPUT_DIR, "antartic_ice.md")
+    md_path = os.path.join(OUTPUT_DIR, "antarctic_ice.md")
     with open(md_path, "w") as f:
-        f.write(f"{social_caption}\n\n")
+        f.write(social_caption.strip() + "\n")  # only a single newline at the end
+
 
     return today_anomaly, today_std, raw_path, anomaly_path, md_path, social_caption
 
