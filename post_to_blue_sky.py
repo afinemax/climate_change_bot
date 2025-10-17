@@ -8,16 +8,21 @@ import re                                 # Needed for hashtag regex
 def make_hashtag_facets(text: str):
     """Generate facets as dictionaries for all hashtags in the text."""
     facets = []
-    # Match hashtags with letters, numbers, underscores, and optional dashes
+    text_bytes = text.encode("utf-8")
     for match in re.finditer(r"#([\w-]+)", text):
-        start, end = match.span()
+        # Convert character indices to byte indices
+        start_char, end_char = match.span()
+        start_byte = len(text[:start_char].encode("utf-8"))
+        end_byte = len(text[:end_char].encode("utf-8"))
+
         tag = match.group(1)
         facets.append({
             "$type": "app.bsky.richtext.facet",
-            "index": {"byteStart": start, "byteEnd": end},
+            "index": {"byteStart": start_byte, "byteEnd": end_byte},
             "features": [{"$type": "app.bsky.richtext.facet#tag", "tag": tag}],
         })
     return facets
+
 
 
 def main():

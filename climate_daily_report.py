@@ -142,7 +142,7 @@ def make_na_sst_plot(url='https://climatereanalyzer.org/clim/sst_daily/json_2cli
     social_caption = (
     f"🌏🔥🌡️: Today's North Atlantic Sea Surface Temperature Anomaly is "
     f"{anomaly_val:.2f}°C above the 1982–2010 mean. "
-    "#ClimateChange #NorthAtlantic #SST #GlobalWarming #greenhouse #science #dataanalysis")
+    "#ClimateChange #NorthAtlantic #SST #GlobalWarming #greenhouse #science #dataanalysis #GlobalWarming #ClimateData #ClimateAction #Python #DataEngineering #datascience")
 
     # Markdown caption
     md_path = os.path.join(OUTPUT_DIR, "NA_SST.md")
@@ -234,7 +234,7 @@ def make_antartic_ice_plot(reorganized_data, mean_extent_per_day, std_extent_per
     social_caption = (
     f"🌏🇦🇶🔥: Today's Antarctic Sea Ice Anomaly is {today_anomaly:.2f} Million Square Kilometers "
     f"({today_std:.2f}σ) above the 1981–2010 mean. "
-    "#ClimateCrisis #SeaIce #Antarctica #Greenhouse #science #dataanalysis")
+    "#ClimateCrisis #SeaIce #Antarctica #Greenhouse #science #dataanalysis #ClimateData #ClimateAction #Python #DataEngineering #datascience")
 
     # Markdown
     md_path = os.path.join(OUTPUT_DIR, "antarctic_ice.md")
